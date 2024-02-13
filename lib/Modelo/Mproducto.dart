@@ -6,7 +6,7 @@ class Producto {
   Producto({
     required this.barcode,
     required this.nombre,
-    required this.precio,
+    required this.precio, 
   });
 
   Map<String, dynamic> toMap() {

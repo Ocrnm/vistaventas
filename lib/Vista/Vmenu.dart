@@ -39,23 +39,20 @@ class VistaMenu extends StatelessWidget{
           },
           child: Text('Venta'),
         ),
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                // Add your code here
-              },
-              child: Text('Button 1'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Add your code here
-              },
-              child: Text('Button 2'),
-            ),
-          ],
+       // child: Column(
+       //   children: [
+          //  ElevatedButton(
+          //    onPressed: () {
+          //    },
+          //    child: Text('Button 1'),
+          //  ),
+          //  ElevatedButton(
+          //    onPressed: () {
+           //   },
+            //  child: Text('Button 2'),
+           // ),
+          //], 
         ),
-      ),
-    );
+      );
   }
 }
