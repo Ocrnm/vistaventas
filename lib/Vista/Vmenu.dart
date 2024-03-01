@@ -1,58 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:vistaventas/Vista/main.dart';
+import 'package:vistaventas/Vista/Valmacen.dart';
+import 'package:vistaventas/Vista/Vcarrito.dart';
+import 'package:vistaventas/Vista/Vagregarproducto.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+       debugShowCheckedModeBanner: false,
       home: VistaMenu(),
       routes: {
-        '/venta': (context) => PuntodeVenta(),
+        '/venta': (context) => CrearProducto(),
       },
     );
   }
 }
 
-class VistaMenu extends StatelessWidget{
-    @override
-  Widget build(BuildContext context){
+class VistaMenu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffBFB5A8),
       appBar: AppBar(
         title: Text('Inicio'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PuntodeVenta()),
+              MaterialPageRoute(builder: (context) => CarritoPage()),
             );
-          },
-          child: Text('Venta'),
+              },
+              child: Text('Carrito de Compras'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Valmacen()),
+            );
+              },
+              child: Text('Almacen'),
+            ),
+          ],
         ),
-       // child: Column(
-       //   children: [
-          //  ElevatedButton(
-          //    onPressed: () {
-          //    },
-          //    child: Text('Button 1'),
-          //  ),
-          //  ElevatedButton(
-          //    onPressed: () {
-           //   },
-            //  child: Text('Button 2'),
-           // ),
-          //], 
-        ),
-      );
+      ),
+    );
   }
 }
